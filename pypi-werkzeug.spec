@@ -5,19 +5,18 @@
 # Source0 file verified with key 0x7A1C87E3F5BC42A8 (davidism@gmail.com)
 #
 Name     : pypi-werkzeug
-Version  : 2.0.3
-Release  : 92
-URL      : https://files.pythonhosted.org/packages/6c/a8/60514fade2318e277453c9588545d0c335ea3ea6440ce5cdabfca7f73117/Werkzeug-2.0.3.tar.gz
-Source0  : https://files.pythonhosted.org/packages/6c/a8/60514fade2318e277453c9588545d0c335ea3ea6440ce5cdabfca7f73117/Werkzeug-2.0.3.tar.gz
-Source1  : https://files.pythonhosted.org/packages/6c/a8/60514fade2318e277453c9588545d0c335ea3ea6440ce5cdabfca7f73117/Werkzeug-2.0.3.tar.gz.asc
+Version  : 2.1.0
+Release  : 93
+URL      : https://files.pythonhosted.org/packages/a1/07/daa2d95151f3debf3b6d1f3c0b9619da8c93759f7e4e794b9a1dbde52bea/Werkzeug-2.1.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/a1/07/daa2d95151f3debf3b6d1f3c0b9619da8c93759f7e4e794b9a1dbde52bea/Werkzeug-2.1.0.tar.gz
+Source1  : https://files.pythonhosted.org/packages/a1/07/daa2d95151f3debf3b6d1f3c0b9619da8c93759f7e4e794b9a1dbde52bea/Werkzeug-2.1.0.tar.gz.asc
 Summary  : The comprehensive WSGI web application library.
 Group    : Development/Tools
-License  : BSD-3-Clause OFL-1.1
+License  : BSD-3-Clause
 Requires: pypi-werkzeug-license = %{version}-%{release}
 Requires: pypi-werkzeug-python = %{version}-%{release}
 Requires: pypi-werkzeug-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(dataclasses)
 BuildRequires : pypi(py)
 BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
@@ -51,22 +50,21 @@ Summary: python3 components for the pypi-werkzeug package.
 Group: Default
 Requires: python3-core
 Provides: pypi(werkzeug)
-Requires: pypi(dataclasses)
 
 %description python3
 python3 components for the pypi-werkzeug package.
 
 
 %prep
-%setup -q -n Werkzeug-2.0.3
-cd %{_builddir}/Werkzeug-2.0.3
+%setup -q -n Werkzeug-2.1.0
+cd %{_builddir}/Werkzeug-2.1.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1644338473
+export SOURCE_DATE_EPOCH=1648662209
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -82,8 +80,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-werkzeug
-cp %{_builddir}/Werkzeug-2.0.3/LICENSE.rst %{buildroot}/usr/share/package-licenses/pypi-werkzeug/c4dbdbc12926d4d52c9156e690640f372615c234
-cp %{_builddir}/Werkzeug-2.0.3/src/werkzeug/debug/shared/FONT_LICENSE %{buildroot}/usr/share/package-licenses/pypi-werkzeug/81e5605d07c08e95048556f1795931cc038d01e6
+cp %{_builddir}/Werkzeug-2.1.0/LICENSE.rst %{buildroot}/usr/share/package-licenses/pypi-werkzeug/c4dbdbc12926d4d52c9156e690640f372615c234
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -94,7 +91,6 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/pypi-werkzeug/81e5605d07c08e95048556f1795931cc038d01e6
 /usr/share/package-licenses/pypi-werkzeug/c4dbdbc12926d4d52c9156e690640f372615c234
 
 %files python
