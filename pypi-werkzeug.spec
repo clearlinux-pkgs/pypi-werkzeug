@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x7A1C87E3F5BC42A8 (davidism@gmail.com)
 #
 Name     : pypi-werkzeug
-Version  : 2.1.1
-Release  : 95
-URL      : https://files.pythonhosted.org/packages/ab/ff/8bd63902be9e33157bf14384382f7ec0c70ee001066b057dd58251e1c769/Werkzeug-2.1.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/ab/ff/8bd63902be9e33157bf14384382f7ec0c70ee001066b057dd58251e1c769/Werkzeug-2.1.1.tar.gz
-Source1  : https://files.pythonhosted.org/packages/ab/ff/8bd63902be9e33157bf14384382f7ec0c70ee001066b057dd58251e1c769/Werkzeug-2.1.1.tar.gz.asc
+Version  : 2.1.2
+Release  : 96
+URL      : https://files.pythonhosted.org/packages/10/cf/97eb1a3847c01ae53e8376bc21145555ac95279523a935963dc8ff96c50b/Werkzeug-2.1.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/10/cf/97eb1a3847c01ae53e8376bc21145555ac95279523a935963dc8ff96c50b/Werkzeug-2.1.2.tar.gz
+Source1  : https://files.pythonhosted.org/packages/10/cf/97eb1a3847c01ae53e8376bc21145555ac95279523a935963dc8ff96c50b/Werkzeug-2.1.2.tar.gz.asc
 Summary  : The comprehensive WSGI web application library.
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -56,15 +56,15 @@ python3 components for the pypi-werkzeug package.
 
 
 %prep
-%setup -q -n Werkzeug-2.1.1
-cd %{_builddir}/Werkzeug-2.1.1
+%setup -q -n Werkzeug-2.1.2
+cd %{_builddir}/Werkzeug-2.1.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1649795357
+export SOURCE_DATE_EPOCH=1651181051
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -80,7 +80,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-werkzeug
-cp %{_builddir}/Werkzeug-2.1.1/LICENSE.rst %{buildroot}/usr/share/package-licenses/pypi-werkzeug/c4dbdbc12926d4d52c9156e690640f372615c234
+cp %{_builddir}/Werkzeug-2.1.2/LICENSE.rst %{buildroot}/usr/share/package-licenses/pypi-werkzeug/c4dbdbc12926d4d52c9156e690640f372615c234
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
