@@ -1,5 +1,5 @@
 PKG_NAME := pypi-werkzeug
-URL = https://files.pythonhosted.org/packages/ae/66/1b437603a0300864b0fd1e49b732d45a8a5be615eba5121f7cdfb97668dd/Werkzeug-2.3.0.tar.gz
+URL = https://files.pythonhosted.org/packages/52/82/bc77d22189679940b9f73685451167221ec5348e08c6d2594f1070767124/Werkzeug-2.3.3.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
