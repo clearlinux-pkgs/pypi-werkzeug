@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-werkzeug
-Version  : 2.3.3
-Release  : 112
-URL      : https://files.pythonhosted.org/packages/52/82/bc77d22189679940b9f73685451167221ec5348e08c6d2594f1070767124/Werkzeug-2.3.3.tar.gz
-Source0  : https://files.pythonhosted.org/packages/52/82/bc77d22189679940b9f73685451167221ec5348e08c6d2594f1070767124/Werkzeug-2.3.3.tar.gz
+Version  : 2.3.4
+Release  : 113
+URL      : https://files.pythonhosted.org/packages/2d/bf/5a00bb4a70028f7c6000bc9394492154fa9ae3f5226187e3ddcd0aa5eca1/Werkzeug-2.3.4.tar.gz
+Source0  : https://files.pythonhosted.org/packages/2d/bf/5a00bb4a70028f7c6000bc9394492154fa9ae3f5226187e3ddcd0aa5eca1/Werkzeug-2.3.4.tar.gz
 Summary  : The comprehensive WSGI web application library.
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -16,6 +16,7 @@ Requires: pypi-werkzeug-python = %{version}-%{release}
 Requires: pypi-werkzeug-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(py)
+BuildRequires : pypi(setuptools)
 BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
 BuildRequires : pypi-tox
@@ -58,10 +59,10 @@ python3 components for the pypi-werkzeug package.
 
 
 %prep
-%setup -q -n Werkzeug-2.3.3
-cd %{_builddir}/Werkzeug-2.3.3
+%setup -q -n Werkzeug-2.3.4
+cd %{_builddir}/Werkzeug-2.3.4
 pushd ..
-cp -a Werkzeug-2.3.3 buildavx2
+cp -a Werkzeug-2.3.4 buildavx2
 popd
 
 %build
@@ -69,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682976446
+export SOURCE_DATE_EPOCH=1683600928
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
