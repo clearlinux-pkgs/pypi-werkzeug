@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-werkzeug
-Version  : 2.3.6
-Release  : 114
-URL      : https://files.pythonhosted.org/packages/d1/7e/c35cea5749237d40effc50ed1a1c7518d9f2e768fcf30b4e9ea119e74975/Werkzeug-2.3.6.tar.gz
-Source0  : https://files.pythonhosted.org/packages/d1/7e/c35cea5749237d40effc50ed1a1c7518d9f2e768fcf30b4e9ea119e74975/Werkzeug-2.3.6.tar.gz
+Version  : 2.3.7
+Release  : 115
+URL      : https://files.pythonhosted.org/packages/ef/56/0acc9f560053478a4987fa35c95d904f04b6915f6b5c4d1c14dc8862ba0a/werkzeug-2.3.7.tar.gz
+Source0  : https://files.pythonhosted.org/packages/ef/56/0acc9f560053478a4987fa35c95d904f04b6915f6b5c4d1c14dc8862ba0a/werkzeug-2.3.7.tar.gz
 Summary  : The comprehensive WSGI web application library.
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -15,8 +15,8 @@ Requires: pypi-werkzeug-license = %{version}-%{release}
 Requires: pypi-werkzeug-python = %{version}-%{release}
 Requires: pypi-werkzeug-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+BuildRequires : pypi(flit_core)
 BuildRequires : pypi(py)
-BuildRequires : pypi(setuptools)
 BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
 BuildRequires : pypi-tox
@@ -59,10 +59,10 @@ python3 components for the pypi-werkzeug package.
 
 
 %prep
-%setup -q -n Werkzeug-2.3.6
-cd %{_builddir}/Werkzeug-2.3.6
+%setup -q -n werkzeug-2.3.7
+cd %{_builddir}/werkzeug-2.3.7
 pushd ..
-cp -a Werkzeug-2.3.6 buildavx2
+cp -a werkzeug-2.3.7 buildavx2
 popd
 
 %build
@@ -70,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686670270
+export SOURCE_DATE_EPOCH=1692029425
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -95,7 +95,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-werkzeug
-cp %{_builddir}/Werkzeug-%{version}/LICENSE.rst %{buildroot}/usr/share/package-licenses/pypi-werkzeug/c4dbdbc12926d4d52c9156e690640f372615c234 || :
+cp %{_builddir}/werkzeug-%{version}/LICENSE.rst %{buildroot}/usr/share/package-licenses/pypi-werkzeug/c4dbdbc12926d4d52c9156e690640f372615c234 || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
