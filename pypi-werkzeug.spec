@@ -7,7 +7,7 @@
 #
 Name     : pypi-werkzeug
 Version  : 3.0.6
-Release  : 124
+Release  : 125
 URL      : https://files.pythonhosted.org/packages/d4/f9/0ba83eaa0df9b9e9d1efeb2ea351d0677c37d41ee5d0f91e98423c7281c9/werkzeug-3.0.6.tar.gz
 Source0  : https://files.pythonhosted.org/packages/d4/f9/0ba83eaa0df9b9e9d1efeb2ea351d0677c37d41ee5d0f91e98423c7281c9/werkzeug-3.0.6.tar.gz
 Summary  : The comprehensive WSGI web application library.
