@@ -6,10 +6,10 @@
 # autospec commit: f35655a
 #
 Name     : pypi-werkzeug
-Version  : 3.1.0
-Release  : 126
-URL      : https://files.pythonhosted.org/packages/d4/09/a3137f4decac87db077c9edd03a23f85462db89d898caa10223dad4d9af2/werkzeug-3.1.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/d4/09/a3137f4decac87db077c9edd03a23f85462db89d898caa10223dad4d9af2/werkzeug-3.1.0.tar.gz
+Version  : 3.1.1
+Release  : 127
+URL      : https://files.pythonhosted.org/packages/32/af/d4502dc713b4ccea7175d764718d5183caf8d0867a4f0190d5d4a45cea49/werkzeug-3.1.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/32/af/d4502dc713b4ccea7175d764718d5183caf8d0867a4f0190d5d4a45cea49/werkzeug-3.1.1.tar.gz
 Summary  : The comprehensive WSGI web application library.
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -63,10 +63,10 @@ python3 components for the pypi-werkzeug package.
 
 
 %prep
-%setup -q -n werkzeug-3.1.0
-cd %{_builddir}/werkzeug-3.1.0
+%setup -q -n werkzeug-3.1.1
+cd %{_builddir}/werkzeug-3.1.1
 pushd ..
-cp -a werkzeug-3.1.0 buildavx2
+cp -a werkzeug-3.1.1 buildavx2
 popd
 
 %build
@@ -74,7 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1730417043
+export SOURCE_DATE_EPOCH=1730496816
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
