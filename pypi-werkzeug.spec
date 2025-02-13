@@ -7,7 +7,7 @@
 #
 Name     : pypi-werkzeug
 Version  : 3.1.3
-Release  : 129
+Release  : 130
 URL      : https://files.pythonhosted.org/packages/9f/69/83029f1f6300c5fb2471d621ab06f6ec6b3324685a2ce0f9777fd4a8b71e/werkzeug-3.1.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/9f/69/83029f1f6300c5fb2471d621ab06f6ec6b3324685a2ce0f9777fd4a8b71e/werkzeug-3.1.3.tar.gz
 Summary  : The comprehensive WSGI web application library.
